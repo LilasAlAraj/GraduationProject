@@ -1,0 +1,399 @@
+pre {
+    font-size: .875rem;
+    font-family: var(--bs-font-sans-serif);
+}
+
+body {
+
+    background-color: #f2f2f2;
+    font-size: .875rem;
+    display: inline;
+}
+
+
+h1,
+h2 {
+    color: rgb(87, 126, 155);
+    font-family: 'Reem Kufi', sans-serif;
+
+}
+
+#big-frame,
+form {
+    /* border: 2px solid rgb(7, 48, 78);
+    background-color: #fff; */
+    width: auto;
+    margin: auto;
+    padding: auto;
+}
+
+#login-form {
+    border-radius: 6%;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: right;
+    transform: translateY(7.5%);
+}
+
+#imgcontainer {
+    text-align: center;
+    position: relative;
+}
+
+img#avatar {
+    width: 25%;
+    border-radius: 50%;
+}
+
+b,
+legend,
+label {
+    color: rgb(7, 48, 78);
+}
+
+select.searchInput,
+input.searchInput {
+    width: 100%;
+    padding: 5px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    color: #000;
+    border: 1px solid #ccc;
+    text-align: right;
+
+}
+
+select,
+input:not(input[type="radio"], input[type='checkbox'], .searchInput) {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    color: #000;
+    border: 1px solid #ccc;
+    text-align: right;
+}
+
+#add_btn {
+    background-color: rgb(87, 126, 155);
+
+    color: #fff;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.container {
+    padding: 16px;
+}
+
+#forget_password {
+    display: flex;
+    justify-content: center;
+    text-decoration-line: none;
+    font-weight: bolder;
+    color: rgb(87, 126, 155);
+    width: fit-content;
+}
+
+#forget_password:hover {
+    color: rgb(7, 48, 78);
+
+
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
+
+/* ستايل لزر العرض */
+#show-confirm_new_password-btn,
+#show-new_password-btn,
+#show-current_password-btn,
+#show-password-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(7, 48, 78);
+    width: 100%;
+    transform: translateY(8px);
+    height: 46px;
+}
+
+/* ستايل لإظهار كلمة المرور */
+#password[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+    text-align: right;
+}
+
+
+/* Styles for error messages */
+.error {
+    color: #f00;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/**suggestion of names************/
+
+.suggestions {
+    list-style-type: none;
+    margin-right: 2%;
+    position: fixed;
+    background-color: #666;
+    color: white;
+    z-index: 111;
+}
+
+.suggestions li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.suggestions li:hover {
+    background-color: #7a7a7a9f;
+}
+
+#client-delete-vs1,
+#lawyer-delete-vs1,
+#client-delete-vs2,
+#lawyer-delete-vs2,
+#client-pls-vs1,
+#lawyer-pls-vs1,
+#client-pls-vs2,
+#lawyer-pls-vs2,
+#del_base_number,
+#pls-base-number {
+    background-color: rgb(87, 126, 155);
+
+    color: #fff;
+    padding: 1% 1%;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+
+}
+
+/******إطار     ******/
+.frame {
+    border: 1px solid #666666a6;
+    border-radius: 15px;
+    padding: 2%;
+}
+
+
+/******logo of naqaba*****/
+
+
+.logocontainer {
+    text-align: center;
+    position: relative;
+}
+
+img.naqaba-logo {
+    width: 10%;
+}
+
+thead {
+    text-align: center;
+}
+
+
+
+.accordion-button {
+    color: rgb(87, 126, 155);
+
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+
+
+.accordion-button:not(.collapsed) {
+    color: rgb(240, 240, 240);
+    background-color: rgb(87, 126, 155);
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+.accordion-button::after {
+    margin-right: 1.5%;
+
+}
+
+
+
+/****تنسيق جدول القضايا المضافة مؤخراً***/
+.clickable-row:hover {
+    background-color: rgba(87, 126, 155, 0.2);
+    ;
+}
+
+tr.clickable-row:hover th,
+tr.clickable-row:hover td {
+    color: white
+}
+
+#add-recommendations-button,
+#add-courts-button,
+#add-members-button,
+#add-clients-button,
+#edit_state-button,
+#add-cases-button,
+#add-task-button,
+#add-session-button,
+#add-decision-button,
+#add-session-attachment-button {
+    background-color: rgb(87, 126, 155);
+
+}
+
+.operations-btn,
+.operations-btn:hover {
+    color: white;
+    width: max-content;
+}
+
+.dropdown-menu {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(32, 32, 32, 0.384);
+    min-width: max-content;
+    box-shadow: 0 4px 8px 0 rgba(32, 32, 32, 0.384), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.dropdown-menu li button {
+    width: 100%;
+}
+
+/*****حالة القضية في جدول عرض القضايا****/
+.state {
+    color: #fff !important;
+}
+
+.btn-info {
+    color: #fff;
+}
+
+.menu-operations-btn {
+    width: 100%;
+}
+
+
+
+/*************************/
+#reverse-btn {
+    color: rgb(87, 126, 155);
+    background-color: transparent;
+    border: transparent;
+}
+
+/***********************لون ازرار البحث الخاصة بعرض القضايا********/
+.searchBy {
+    color: rgb(87, 126, 155);
+    font-weight: bold;
+}
+
+.nav-link.searchBy.active {
+    background-color: rgb(87, 126, 155);
+    color: #fff;
+}
+
+.searchBy:hover {
+    background-color: rgba(87, 126, 155, 0.541);
+
+    color: white;
+}
+
+/*****************color of pagination**************/
+.page-link {
+    color: rgb(87, 126, 155);
+    cursor: pointer;
+}
+
+.active .page-link {
+    color: white;
+    background-color: rgb(87, 126, 155);
+    border-color: transparent;
+}
+
+
+
+.btn-warning,
+
+.btn-warning:hover {
+    color: white;
+}
+
+
+.card-header {
+    font-size: 1em;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: rgb(87, 126, 155);
+    ;
+}
+
+.caseTitle,
+.show_more {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.show_more:hover {
+    text-decoration: underline;
+    color: rgb(87, 126, 155);
+
+}
+
+.caseTitle:hover {
+    text-decoration: underline;
+}
+
+
+/********************ir************/
+#retreivedCases .card-body {
+    padding: 0;
+}
+
+#retreivedCases .accordion-body-decisions{
+    padding-bottom: 0;
+
+}
+
+.highlight{
+    background-color:  rgb(153, 211, 255);
+    color: #000;
+}

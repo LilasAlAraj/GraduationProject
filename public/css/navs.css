@@ -1,0 +1,298 @@
+
+body{
+    min-height: 100vh;
+}.feather {
+    width: 16px;
+    height: 16px;
+}
+
+/*
+   * Sidebar
+   */
+.navbar-toggler {
+    z-index: 1;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 48px 0 0;
+    /* Height of navbar */
+    box-shadow: inset 2px 0 0 rgba(0, 0, 0, .1);
+    background-color: white;
+
+}
+
+
+
+.sidebar-sticky {
+    height: calc(100vh - 48px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+
+}
+
+.sidebar .nav-link {
+    font-size: 14px;
+
+    width: 100%;
+}
+
+.sidebar .nav-item {
+    color: rgb(87, 126, 155);
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgb(87, 126, 155);
+    font-size: x-large;
+
+
+}
+
+.sidebar .nav-item:hover {
+
+    background-color: rgb(87, 126, 155);
+    color: white;
+}
+
+.sidebar .nav-item button {
+    width: 100%;
+}
+
+.collapse-items {
+    color: black;
+
+}
+
+.collapse-items:hover {
+    color: white;
+}
+
+.navbar button span {
+    color: rgb(87, 126, 155);
+
+}
+
+
+.navbar .nav-link {
+    color: rgb(87, 126, 155);
+}
+
+
+.navbar .nav-link::selection {
+    color: white;
+
+}
+
+.nav-link .feather {
+    margin-left: 4px;
+    color: inherit
+}
+
+.nav-link.active {
+    color: #4c4d4e;
+}
+
+.nav-link:hover .feather,
+.nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+}
+
+/*
+   * Navbar
+   */
+
+.navbar-brand {
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+    top: .25rem;
+    left: 1rem;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+
+.imgcontainer {
+    text-align: center;
+    position: relative;
+}
+
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+ul {
+    padding-right: 0;
+
+}
+
+main {
+    translate: -20%;
+}
+
+
+
+/********ضبط الوقت**********/
+#time {
+    width: fit-content;
+    color: white;
+}
+
+
+
+
+/* لون الشريط */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(7, 48, 78);
+}
+
+/* لون المسار */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* لون القاطع (الحاجز) بين الشريط والمسار */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(7, 48, 78);
+
+    border-radius: 5px;
+
+}
+
+/* لون الشريط عندما يتم تحريكه */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(7, 48, 78);
+
+}
+
+
+
+/****سبينر التحميل****/
+
+#spinner {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    /* لجعل الارتفاع يمتد لارتفاع الشاشة بأكملها */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    z-index: 201;
+}
+
+#spinner #avatar {
+    width: 50%;
+}
+
+#in-spinner {
+    text-align: center;
+
+
+}
+
+#in-spinner .bounce {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 100%;
+    display: inline-block;
+    animation: bounce 1s infinite ease-in-out both;
+}
+
+#in-spinner .bounceImg {
+    animation: bounce2 1s 1 ease-in both;
+
+}
+
+#in-spinner #bounce1 {
+    animation-delay: -0.32s;
+}
+
+#in-spinner #bounce2 {
+    animation-delay: -0.16s;
+}
+
+
+#in-spinner #bounce1 {
+    background-color: rgb(7, 48, 78);
+}
+
+
+#in-spinner #bounce2 {
+    background-color: rgb(87, 126, 155)
+}
+
+#in-spinner #bounce3 {
+    background-color: rgb(74, 73, 79)
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1.0);
+    }
+}
+
+@keyframes bounce2 {
+
+    0% {
+        transform: scale(0);
+
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+
+
+footer {
+    background-color: rgb(7, 48, 78);
+    color: white;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 301 ;
+}
+footer p {
+    display: contents;
+}
+
+footer span.logo {
+    color:  rgb(87, 126, 155);
+
+}

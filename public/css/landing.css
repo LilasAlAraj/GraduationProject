@@ -1,0 +1,162 @@
+:root {
+    --shadow: rgb(88, 88, 88);
+
+    --black: black;
+    --white: white;
+    --gray: gray;
+    --bg-color: rgb(7, 48, 78);
+    --main-color: rgb(87, 126, 155);
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+
+    contain: paint;
+    /*this is instead of overflow-y: hidden; */
+    /*
+    note:
+    i put body class to make style switcher without any container, to make it over on screen scrolling
+    */
+}
+
+nav {
+    background-color: var(--bg-color);
+    text-align: center;
+    box-shadow: 0 2px 4px 0 var(--shadow);
+    position: sticky;
+    top: 0%;
+}
+
+.nav-item a {
+    color: white;
+    text-align: right;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    color: var(--main-color);
+}
+
+.nav-item #login-btn {
+    height: 100%;
+    color: white;
+    background-color: var(--main-color);
+}
+footer {
+    background-color: var(--bg-color);
+    position: sticky;
+    color: white;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    display: contents;
+}
+
+footer span.logo {
+    color: var(--main-color);
+}
+
+img.avatar {
+    width: 50%;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 991px) {
+    img.avatar {
+        width: 200%;
+        border-radius: 50%;
+    }
+}
+
+.landing .container {
+    text-align: center;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: var(--main-color);
+    padding-top: 30px;
+}
+
+#landing-text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.agency-font {
+    font-family: "Tilt Prism", cursive;
+
+    font-size: 100px;
+    left: 5px;
+    position: relative;
+    top: 5px;
+}
+
+#motto {
+    font-family: "Reem Kufi", sans-serif;
+    color: var(--bg-color);
+    font-size: 60px;
+}
+
+#provide-message {
+    color: #fff;
+    font-size: 19px;
+    position: relative;
+    top: 25px;
+}
+#logo{
+    position: relative;
+    top: 40px;
+}
+/*****************/
+
+.box {
+    border-radius: 15px;
+    box-shadow: 0px 2px 4px 5px var(--shadow);
+    box-shadow: 0px 2px 4px 5px var(--shadow);
+    padding: 30px;
+    margin: 50px 0;
+}
+
+.box-row {
+    border-radius: 5px;
+    box-shadow: 0px 2px 0px 0px var(--shadow);
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    color: var(--bg-color);
+    font-family: 'Reem Kufi', sans-serif;
+
+}
+
+.section-title h3 {
+    font-size: 45px;
+    font-weight: 900;
+}
+
+/*****************/
+
+.feature-name {
+    color: var(--white);
+    background-color: var(--main-color);
+    text-align: center;
+    transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 2px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.feature-description {
+    transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
+}
