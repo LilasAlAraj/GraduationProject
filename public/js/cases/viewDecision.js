@@ -2,7 +2,7 @@ let decision;
 
 function setDecisionAuth() {
     if (role == 1 || role == 2) {
-        if (caseItem.isArchived !== 'true') {
+        if (caseItem.case.deleted_at == null) {
 
             const edit_btn = document.createElement('button')
             edit_btn.type = "button"
@@ -267,7 +267,7 @@ function addDecisionRow(table, decision) {
     operationMenu.append(viewOpLi)
 
     if (role == 1 || role == 2) {
-        if (caseItem.isArchived !== 'true') {
+        if (caseItem.case.deleted_at == null) {
 
             const deleteBtn = document.createElement('button');
             deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash align-text-bottom" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>'

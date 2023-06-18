@@ -43,8 +43,10 @@ class SettingAccountController extends Controller
 
 
 
-    function show(){
+    function show()
+    {
         $user = Auth::user();
+        
         return response()->json(['user'=>$user]);
     }
 }

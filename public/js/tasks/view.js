@@ -328,6 +328,7 @@ function updatePagination(data) {
 
 
         const liChild = document.createElement('a');
+
         liChild.classList.add('page-link');
         li.setAttribute('page', currentPage);
 
@@ -415,7 +416,6 @@ function showPage(pageNumber, data) {
         const task = data[i].task;
         const lawyers = data[i].lawyers;
 
-        console.log(task)
 
         var lawyersString = '';
         for (var j = 0; j < lawyers.length; j++) {
@@ -537,8 +537,10 @@ function showPage(pageNumber, data) {
             changeStatusOpLi.append(change_status_btn);
             changeStatusOpLi.classList = 'operationMenuItem'
 
-            document.getElementById('change-button').onclick = function () {
-                changeStatus(task.id)
+            change_status_btn.onclick = function () {
+                document.getElementById('change-button').onclick = function () {
+                    changeStatus(task)
+                }
             }
             operationMenu.append(changeStatusOpLi)
         }
@@ -568,7 +570,7 @@ function showPage(pageNumber, data) {
     // تمييز الصفحة الحالية في Pagination
 }
 
-function changeStatus(id) {
+function changeStatus(task) {
     $('#chang_status_form').validate(
         {
             rules: {
@@ -591,13 +593,13 @@ function changeStatus(id) {
                     }
                 });
                 $.ajax({
-                    url: "http://127.0.0.1:8000/tasks/" + id + "/status/edit", // اسم ملف php الذي يقوم بالحذف
+                    url: "http://127.0.0.1:8000/tasks/" + task.id + "/status/edit", // اسم ملف php الذي يقوم بالحذف
                     method: "put", // طريقة الإرسال POST
                     data: { 'Value_Status': statusID },
                     success: function (response) {
                         console.log(response); // عرض الاستجابة في وحدة التحكم بالمتصفح
 
-                        const status = document.getElementById("status-" + id);
+                        const status = document.getElementById("status-" + task.id);
                         status.classList = [];
 
                         if (statusID == 1) {
@@ -614,6 +616,7 @@ function changeStatus(id) {
                             status.classList.add('text-bg-dark', 'badge', 'state');
                             status.innerHTML = ('مؤجلة')
                         }
+                        task.Value_Status = statusID
                         closeModal();
                         $('#staticBackdrop').modal('hide');
                         document.getElementById('message-text').innerHTML = response.message;
@@ -666,9 +669,9 @@ function deleteRecommendation(id) {
         }
     });
 }
-
+var i = 0;
 function viewTask(task, lawyers) {
-
+    console.log(i++)
 
     var lawyersString = '';
     for (var j = 0; j < lawyers.length; j++) {
@@ -680,17 +683,16 @@ function viewTask(task, lawyers) {
     }
     const status = document.createElement('span');
     status.classList.add('badge', 'state');
-
-    if (task.Value_Status === 1) {
+    if (task.Value_Status == 1) {
         status.classList.add('text-bg-info');
         status.innerHTML = 'قيد التنفيذ'
-    } else if (task.Value_Status === 2) {
+    } else if (task.Value_Status == 2) {
         status.innerHTML = 'ملغاة'
         status.classList.add('text-bg-danger');
-    } else if (task.Value_Status === 3) {
+    } else if (task.Value_Status == 3) {
         status.innerHTML = 'مكتملة'
         status.classList.add('text-bg-success');
-    } else if (task.Value_Status === 4) {
+    } else if (task.Value_Status == 4) {
         status.innerHTML = 'مؤجلة'
         status.classList.add('text-bg-dark');
     }
@@ -700,7 +702,7 @@ function viewTask(task, lawyers) {
     document.getElementById('TaskEndDate').innerHTML = (task.end_date);
     document.getElementById('TaskLawyers').innerHTML = (lawyersString);
     document.getElementById('TaskDescription').innerHTML = (task.description);
-    document.getElementById('TaskStatus').append(status);
+    document.getElementById('TaskStatus').innerHTML = (status.outerHTML);
 
 }
 function deleteCase(itemId) {

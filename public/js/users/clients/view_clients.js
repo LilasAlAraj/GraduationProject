@@ -108,13 +108,14 @@ function searchByName() {
                         $('#table-body').empty();
 
                         console.log(response)
-                        currentData = response.clients;
+                        currentData = response;
+
+                        document.getElementById('content').style.display = 'block';
+                        document.getElementById('spinner').style.display = 'none';
                         // تحديث Pagination
                         updatePagination(currentData);
                         showPage(1, currentData)
 
-                        document.getElementById('content').style.display = 'block';
-                        document.getElementById('spinner').style.display = 'none';
                     },
                     error: function (response) { // الدالة التي تنفذ في حالة وجود خطأ أثناء الحذف
                         console.log(response); // عرض الخطأ في وحدة التحكم بالمتصفح
@@ -133,14 +134,15 @@ var currentPageGlobally = 1;
 
 
 // تحديث Pagination بعد تحديد الفترة الزمنية
-function updatePagination(data) {
+function updatePagination(dataS) {
 
     // إزالة Pagination الحالي
     $('#pagination').empty();
 
-    // إنشاء Pagination جديد
-    var itemsPerPage = 10;
-    var totalPages = Math.ceil(data.length / itemsPerPage);
+    // إنشاء Pagination جيد
+    var itemsPerPage = 10
+    console.log(dataS);
+    var totalPages = Math.ceil(dataS.length / itemsPerPage);
 
 
 

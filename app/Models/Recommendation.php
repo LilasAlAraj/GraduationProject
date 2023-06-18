@@ -46,6 +46,12 @@ class Recommendation extends Model
                             ],
                         ],
                         'filter' => [
+                            'arabic_stopwords' => [
+                                'type' => 'stop',
+                                'stopwords_path' => 'arabic_stopwords.txt',
+
+                                'ignore_case' => true,
+                            ],
                             'arabic_normalization' => [
                                 'type' => 'arabic_normalization',
                             ],
@@ -56,13 +62,6 @@ class Recommendation extends Model
                             'arabic_stemmer' => [
                                 'type' => 'stemmer',
                                 'language' => 'arabic',
-                            ], 'arabic_stopwords' => [
-                                'type' => 'stop',
-                                'stopwords' => [
-                                    'ب', 'من', 'إلى', 'عن', 'في', 'على', 'مع', 'أن', 'هذا', 'هذه',
-                                    // قائمة تحتوي على أحرف الجر والكلمات التي ترغب في تعيينها كـ "ستوب ووردز"
-                                ],
-                                'ignore_case' => true,
                             ],
 
                         ],
@@ -177,12 +176,25 @@ class Recommendation extends Model
         $params = [
             'index' => Recommendation::$index,
             'body' => [
+                // 'query' => [
+                //     'multi_match' => [
+                //         'query' => $query,
+                //         'fields' => ['title', 'content'],
+                //     ],
+                // ],
+
                 'query' => [
-                    'multi_match' => [
-                        'query' => $query,
-                        'fields' => ['title', 'content'],
-                    ],
-                ],
+                    'bool' => [
+                        'should' => [
+                            ['match' => ['title' => [
+                                'query' => $query,
+                                // 'boost' => 10.0,
+                            ]]],
+                            ['match' => ['content' => $query]],
+
+                        ]
+                    ]
+                ]
             ],
         ];
         $response = $client->search($params);

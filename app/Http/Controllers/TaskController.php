@@ -27,54 +27,91 @@ class TaskController extends Controller
         $taskList = [];
         $i = 0;
 
-        if ($id == 'all') {//كل المهام
+        if ($id == 'all')
+
+        {
 
             $tasks = Task::all();
 
             foreach ($tasks as $task) {
 
                 $lawyers = $task->lawyers;
-                if (Auth::check() && Auth::user()->role_name === 'محامي') {
-                    foreach ($lawyers as $lawyer) {
-                        if (Auth::user()->id == $lawyer->id) {
+
+                if (Auth::check() && Auth::user()->role_name === 'محامي')
+
+                {
+                    foreach ($lawyers as $lawyer)
+
+                    {
+                        if (Auth::user()->id == $lawyer->id)
+
+                        {
                             $taskList[$i++] = ['task' => $task, 'lawyers' => $lawyers];
+
                             break;
                         }
 
                     }
-                } else {
+                }
+
+                else
+
+                {
                     $taskList[$i++] = ['task' => $task, 'lawyers' => $lawyers];
                 }
 
             }
 
-        } else if ($id == 'next') { // جيب المهام القادمة
+        }
+         else if ($id == 'next')
+
+        {
             $tasks = Task::whereDate('start_date', '>', Carbon::today())->get();
-            foreach ($tasks as $task) {
+
+            foreach ($tasks as $task)
+           {
 
                 $lawyers = $task->lawyers;
-                if (Auth::check() && Auth::user()->role_name === 'محامي') {
-                    foreach ($lawyers as $lawyer) {
-                        if (Auth::user()->id == $lawyer->id) {
+
+                if (Auth::check() && Auth::user()->role_name === 'محامي')
+                {
+                    foreach ($lawyers as $lawyer)
+                    {
+                        if (Auth::user()->id == $lawyer->id)
+                        {
                             $taskList[$i++] = ['task' => $task, 'lawyers' => $lawyers];
                             break;
                         }
 
                     }
-                } else {
+                }
+
+                else
+
+                {
                     $taskList[$i++] = ['task' => $task, 'lawyers' => $lawyers];
                 }
 
 
             }
-        } else {//مهمة محددة برقم
+        }
+        else
+
+        {//مهمة محددة برقم
 
             $task = Task::where('id', $id)->first();
+
             $lawyers = $task->lawyers;
 
-            if (Auth::check() && Auth::user()->role_name === 'محامي') {
-                foreach ($lawyers as $lawyer) {
-                    if (Auth::user()->id == $lawyer->id) {
+            if (Auth::check() && Auth::user()->role_name === 'محامي')
+
+            {
+                foreach ($lawyers as $lawyer)
+
+                {
+                    if (Auth::user()->id == $lawyer->id)
+
+                    {
                         $taskList[$i++] = ['task' => $task, 'lawyers' => $lawyers];
                         break;
                     }
@@ -118,7 +155,6 @@ class TaskController extends Controller
 
             'lawyers' => 'required|array',
 
-            'lawyers.*' => 'integer|exists:lawyers,id',
         ]);
 
 
@@ -166,15 +202,15 @@ class TaskController extends Controller
 
             'end_date' => 'required|date',
 
-            'priority' => 'required|integer|min:1|max:10',
+            'priority' => 'required',
         ]);
 
 
-        if ($validator->fails()) {
+        if ($validator->fails())
+
+        {
             return response()->json(['status' => 'failed', 'message' => $validator->errors()]);
         }
-
-
 
         $task->name = $request['name'];
 
@@ -268,26 +304,49 @@ class TaskController extends Controller
     public function filter(Request $request)
     {
         $taskList = [];
+
         $i = 0;
+
         $tasks = [];
 
-        if ($request->search_key == 1) { //search for next tasks
+        if ($request->search_key == 1)
+
+        {
             $status = $request->status;
+
             $priority = $request->priority;
-            if (is_null($status) || is_null($priority)) {
+
+            if (is_null($status) || is_null($priority))
+
+            {
                 $tasks = Task::whereDate('start_date', '>', Carbon::today())
-                    ->where(function ($query) use ($priority, $status) {
+
+                    ->where(function ($query) use ($priority, $status)
+
+                    {
                         $query->where('Value_Status', $status)
+
                             ->orWhere('priority', $priority);
                     })->get();
-            } else {
+            }
+
+            else
+
+            {
                 $tasks = Task::whereDate('start_date', '>', Carbon::today())
+
                     ->where('Value_Status', $status)
+
                     ->where('priority', $priority)->get();
             }
 
-        } else if ($request->search_key == 2) { //search for specific tasks
+        }
+
+        else if ($request->search_key == 2)
+
+        { //search for specific tasks
             $status = $request->status;
+
             $priority = $request->priority;
             if (is_null($status) || is_null($priority)) {
 

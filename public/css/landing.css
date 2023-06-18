@@ -11,7 +11,7 @@
 body {
     direction: rtl;
     text-align: right;
-
+    font-family: Arial, Helvetica, sans-serif;
     contain: paint;
     /*this is instead of overflow-y: hidden; */
     /*
@@ -43,6 +43,7 @@ nav {
     color: white;
     background-color: var(--main-color);
 }
+
 footer {
     background-color: var(--bg-color);
     position: sticky;
@@ -78,7 +79,7 @@ img.avatar {
     min-width: 100%;
     min-height: 100%;
     background-color: var(--main-color);
-    padding-top: 30px;
+    /* padding-top: 30px; */
 }
 
 #landing-text {
@@ -108,10 +109,12 @@ img.avatar {
     position: relative;
     top: 25px;
 }
-#logo{
+
+#logo {
     position: relative;
     top: 40px;
 }
+
 /*****************/
 
 .box {
@@ -123,9 +126,6 @@ img.avatar {
 }
 
 .box-row {
-    border-radius: 5px;
-    box-shadow: 0px 2px 0px 0px var(--shadow);
-    justify-content: center;
     margin-bottom: 2em;
 }
 
@@ -147,16 +147,112 @@ img.avatar {
 .feature-name {
     color: var(--white);
     background-color: var(--main-color);
-    text-align: center;
-    transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
+    transition: 0.8s ease-in-out transform, 0.8s ease-in-out opacity;
     align-items: center;
     justify-content: center;
     display: flex;
-    margin-bottom: 2px;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+    box-shadow: 0px 2px 0px 0px var(--shadow);
+    font-family: 'Reem Kufi', sans-serif;
+
+
 }
 
 .feature-description {
-    transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
+    transition: 0.8s ease-in-out transform, 0.8s ease-in-out opacity;
+    box-shadow: 0px 2px 0px 0px var(--shadow);
+    border-bottom-left-radius: 5px;
+    text-align: justify;
+    ;
+
+}
+
+.card {
+    padding: 0;
+    margin-bottom: 1em;
+    /* box-shadow: 0px 2px 0px 0px var(--shadow); */
+    border-width: 0;
+}
+
+.card-header:first-child {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transition: 0.8s ease-in-out transform, 0.8s ease-in-out opacity;
+
+}
+
+.card-header {
+
+    background-color: var(--main-color);
+    text-align: center;
+
+    padding: 15px 0;
+
+}
+
+.card-body {
+    text-align: center;
+    transition: 0.8s ease-in-out transform, 0.8s ease-in-out opacity;
+    box-shadow: 0px 2px 0px 0px var(--shadow);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+.card-header img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.3rem solid #fff;
+}
+
+.card-title {
+    font-family: "Reem Kufi", sans-serif;
+    color: var(--bg-color);
+}
+
+
+i {
+    font-size: 30px;
+    color: var(--main-color);
+    transition: 1s ease-in-out transform;
+
+}
+
+i:hover {
+    transform: scale(1.5);
+    transition: 1s ease-in-out;
+
+}
+
+
+.contact-us b {
+    color: var(--bg-color);
+
+}
+
+.contact-us-input {
+    margin: 1em;
+}
+
+input {
+    box-sizing: border-box;
+    color: #000;
+    border: 1px solid #ccc;
+    text-align: right;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-us form {
+    text-align: center;
+}
+
+.contact-us button {
+    background-color: rgb(227, 174, 94);
+    color: white;
+    font-weight: bold;
 }

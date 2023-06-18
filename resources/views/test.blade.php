@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link href="../../../css/landing.css" rel="stylesheet">
 </head>
@@ -45,10 +46,10 @@
                             <a class="nav-link" href="#features">ميزاتنا</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">الفريق</a>
+                            <a class="nav-link" href="#team">الفريق</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">اتصل بنا</a>
+                            <a class="nav-link" href="contact-us">تواصل معنا</a>
                         </li>
                         <li class="nav-item" id="login-nav-item" style="text-align: right;">
 
@@ -187,6 +188,300 @@
         </section>
 
 
+        <section class="team fadeSection" id="team">
+
+            <div class="section-title">
+                <h3>الفريق</h3>
+            </div>
+
+            <div class="container">
+                <div class="box row d-flex justify-content-evenly">
+                    {{-- <h3>ما يميزنا</h3> --}}
+                    <div class=" col-lg-4  col-md-6 col-sm-12">
+                        <div class="card">
+
+                            <div class="card-header fade_in_out" data-fade="-100">
+                                <img src="../../Img/team.png" alt="">
+
+                            </div>
+                            <div class="card-body fade_in_out" data-fade="100">
+                                <h5 class="card-title">م. بُشرى عُمَر مُحَمَّد</h5>
+                                <p class="card-text">
+                                    Back End Developer
+                                </p>
+                                <div class="container d-flex justify-content-around">
+                                    <div>
+                                        <a href="https://www.facebook.com/boushra.almouhamad.9" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://wa.me/+963982371710" target="_blank">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="https://t.me/Boushra_almouhammad" target="_blank">
+                                            <i class="fab fa-telegram"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://sy.linkedin.com/in/boushra-almouhamad-6a8168271"
+                                            target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://github.com/boushra-mh" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4  col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header fade_in_out" data-fade="-100">
+                                <img src="../../Img/team.png" alt="">
+
+                            </div>
+                            <div class="card-body fade_in_out" data-fade="100">
+                                <h5 class="card-title">م. رِيتّا جُورْج سَابَا</h5>
+                                <p class="card-text">
+                                    Flutter Developer
+                                </p>
+                                <div class="container d-flex justify-content-around">
+                                    <div>
+                                        <a href="https://www.facebook.com/rita.saba.7503" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://wa.me/+963936282208" target="_blank">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+
+
+                                    <div>
+                                        <a href="https://t.me/rittasaba" target="_blank">
+                                            <i class="fab fa-telegram"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="" target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://github.com/RittaSaba" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4  col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header fade_in_out" data-fade="-100">
+                                <img src="../../Img/team.png" alt="">
+
+                            </div>
+                            <div class="card-body fade_in_out" data-fade="100">
+                                <h5 class="card-title">م. سُلَافَه ناظِمْ الحَمُّود</h5>
+                                <p class="card-text">
+                                    Back End Developer
+                                </p>
+                                <div class="container d-flex justify-content-around">
+                                    <div>
+                                        <a href="https://www.facebook.com/solafa.alhmmoud" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://wa.me/+963954190643" target="_blank">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+
+
+                                    <div>
+                                        <a href="https://t.me/SolaFa2000" target="_blank">
+                                            <i class="fab fa-telegram"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="www.linkedin.com/in/solafa-alhamoud-017955271" target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://github.com/SolaFaALH" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4  col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header fade_in_out" data-fade="-100">
+                                <img src="../../Img/team.png" alt="">
+
+                            </div>
+                            <div class="card-body fade_in_out" data-fade="100">
+                                <h5 class="card-title">م. شَهِد إِسماعِيْل غانِم </h5>
+                                <p class="card-text">
+                                    Flutter Developer
+                                </p>
+                                <div class="container d-flex justify-content-around">
+                                    <div>
+                                        <a href="https://www.facebook.com/shahed.ghanem.58" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://wa.me/+963996354500" target="_blank">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="https://t.me/shahedgh" target="_blank">
+                                            <i class="fab fa-telegram"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://www.linkedin.com/in/shahd-ghanem-626052272" target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://github.com/ShahdGhanem" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4  col-md-6 col-sm-12">
+                        <div class="card">
+                            <div class="card-header fade_in_out" data-fade="-100">
+                                <img src="../../Img/team.png" alt="">
+
+                            </div>
+                            <div class="card-body fade_in_out" data-fade="100">
+                                <h5 class="card-title">م. لِيْلاس سَالِم الأَعْرَج</h5>
+                                <p class="card-text">
+                                    Full Stack Developer
+                                </p>
+                                <div class="container d-flex justify-content-around">
+                                    <div>
+                                        <a href="https://www.facebook.com/lilas.alaraj.5" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://wa.me/+963969589318" target="_blank">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://wa.me/+963998261244" target="_blank">
+                                            <i class="fab fa-whatsapp-square"></i>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="https://t.me/LilasAlAraj" target="_blank">
+                                            <i class="fab fa-telegram"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://www.linkedin.com/in/lilas-al-araj-745882182/"
+                                            target="_blank">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://github.com/LilasAlAraj" target="_blank">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section class="contact-us" id="contact-us">
+
+            <div class="section-title">
+                <h3>تواصل معنا</h3>
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class=" d-flex justify-content-center">
+                            <img src="../../Img/feather.jpg" alt="Logo">
+                        </div>
+                    </div>
+                    <div class=" col-lg-6 col-md-6 col-sm-12">
+                        <div class="box ">
+                            <form method="post">
+
+
+
+                                <div class="row contact-us-input">
+                                    <div class="col-3"style="text-align: end">
+                                        <label for="name"><b> الاسم الثلاثي</b></label>
+                                    </div>
+                                    <div class="col-9 "style="text-align: start">
+                                        <input type="text" id="name" name='name'
+                                            placeholder="أدخل الاسم الثلاثي" required>
+                                    </div>
+                                </div>
+                                <div class="row contact-us-input">
+                                    <div class="col-3" style="text-align: end">
+                                        <label for="current_address"><b>العنوان الحالي</b></label>
+                                    </div>
+                                    <div class=" col-9"style="text-align: start">
+                                        <input type="text" id="current_address" name="current_address"
+                                            placeholder="أدخل العنوان" required>
+                                    </div>
+                                </div>
+                                <div class="row contact-us-input">
+                                    <div class="col-3"style="text-align: end">
+                                        <label for="phone"><b>رقم الجوال </b></label>
+                                    </div>
+                                    <div class="col-9"style="text-align: start">
+                                        <input type="text" id="phone" name="phone"
+                                            placeholder="أدخل رقم الجوال" required>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" class="btn">احجز الآن</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
 
 
@@ -200,7 +495,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 
 
 

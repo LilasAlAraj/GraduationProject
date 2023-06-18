@@ -7,22 +7,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-
-class AdminMiddleware
+class ClientMiddleware
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        
-    
-        if (Auth::check() && Auth::user()->role_name === 'مدير')
+        if (Auth::check() && Auth::user()->role_name === 'زبون')
         {
             return $next($request);
         }
+      
         elseif (Auth::check() &&  Auth::user()->role_name ==='محامي')
 
         {
@@ -33,13 +31,6 @@ class AdminMiddleware
         {
             return redirect()->route('dashboard.secretaria');
         }
-        elseif (Auth::check() &&  Auth::user()->role_name ==='زبون')
-
-        {
-            return redirect()->route('dashboard.client');
-        }
-
-        
-    
+       
 }
 }

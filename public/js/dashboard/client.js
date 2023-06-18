@@ -91,12 +91,15 @@ function displayAll() {
 function addRecommendationRow(recommendations, Recommendation) {
     card_header = document.createElement("div");
     card_header.classList.add("card-header");
-    card_header.append(HighlightText(Recommendation.title));
+    const recommendationTitle = document.createElement("span");
+    recommendationTitle.innerHTML = (HighlightText(Recommendation.title))
+    card_header.append(recommendationTitle);
 
     card_body = document.createElement("div");
     card_body.classList.add("card-body");
 
     content_text = Recommendation.content;
+    const recommendationContent = document.createElement("span");
     content = document.createElement("p");
     if (content_text.length > 1000) {
         content_text = content_text.substring(0, 1000) + "... ";
@@ -111,9 +114,12 @@ function addRecommendationRow(recommendations, Recommendation) {
                 HighlightText(Recommendation.content)
             );
         };
-        content.append(HighlightText(Recommendation.content), show_more);
+        recommendationContent.innerHTML = (HighlightText(content_text.substring(0,1000)))
+        content.append(recommendationContent, show_more);
     } else {
-        content.append(HighlightText(Recommendation.content));
+        recommendationContent.innerHTML = (HighlightText(content_text))
+
+        content.append(recommendationContent);
     }
     card_body.append(content);
 
@@ -134,10 +140,13 @@ function HighlightText(text) {
     let highlightText = "";
 
     query = document.getElementById("toSearch").value;
+    queryWords = []
+    if (query !== '')
+        queryWords = query.split(" ");
 
-    queryWords = query.split(" ");
-
-    textWords = text.split(" ");
+    textWords = []
+    if (text !== '')
+        textWords = text.split(" ");
 
     for (var i = 0; i < textWords.length; i++) {
         tWord = textWords[i];

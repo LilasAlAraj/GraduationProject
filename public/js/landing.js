@@ -40,39 +40,41 @@ function login() {
 
 
 
-
 })();
 
 
 
 function fadeInOut() {
-    const fadeSections = document.querySelectorAll(".fadeSection");
+    // const fadeSections = document.querySelectorAll(".fadeSection");
     window.addEventListener("scroll", () => {
-        fadeSections.forEach(fadeSection => {
-            const i_O = fadeSection.querySelectorAll(".fade_in_out");
-            function fade_in(io) {
-                io.style.cssText = "opacity: 1; transform: translateX(0);";
-            }
+        const i_O = document.querySelectorAll(".fade_in_out");
 
-            function fade_out(io) {
-                const value = io.dataset.fade;
-                io.style.cssText = "opacity: 0; transform: translateX(" + value + "%);";
-            }
-            const trigger = window.innerHeight / 6 * 4;
-            i_O.forEach(io => {
-                const top = io.getBoundingClientRect().top;
-                const bottom = io.getBoundingClientRect().bottom;
-                if (trigger + 170 > top) {
-                    fade_in(io);
-                    if (trigger - 340 > bottom)
-                        fade_out(io);
-                } else {
+        function fade_in(io) {
+            io.style.cssText = "opacity: 1; transform: translateX(0);";
+        }
+
+        function fade_out(io) {
+            const value = io.dataset.fade;
+            io.style.cssText = "opacity: 0; transform: translateX(" + value + "%);";
+        }
+        const trigger = window.innerHeight / 6 * 4;
+        i_O.forEach(io => {
+
+            const top = io.getBoundingClientRect().top;
+            const bottom = io.getBoundingClientRect().bottom;
+            if (trigger + 170 > top) {
+                fade_in(io);
+                if (trigger - 340 > bottom)
                     fade_out(io);
-                }
+            } else {
+                fade_out(io);
+            }
 
 
-            });
         });
+        // });
     });
 
 }
+
+

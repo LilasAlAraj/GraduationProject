@@ -2,7 +2,7 @@ let session;
 
 function setSessionAuth() {
     if (role == 1 || role == 2) {
-        if (caseItem.isArchived !== 'true') {
+        if (caseItem.case.deleted_at == null) {
 
             const edit_btn = document.createElement('button')
             edit_btn.type = "button"
@@ -114,7 +114,7 @@ function addNewAttachmentRow(table, attachment) {
     opperation.append(downloadOp, viewOp)
 
     if (role == 1 || role == 2) {
-        if (caseItem.isArchived !== 'true') {
+        if (caseItem.case.deleted_at == null) {
 
             const removeOp = document.createElement('button');
             removeOp.title = 'حذف المرفق';
